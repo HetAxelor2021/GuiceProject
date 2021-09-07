@@ -5,13 +5,14 @@ import javax.inject.Named;
 
 import com.GuiceProject1.services.DrawShape;
 //import com.google.inject.Inject;
+//import com.google.inject.name.Named;
 
-public class SquareRequest {
+public class CircleRequest {
 //	@Inject
 	DrawShape d;
 	
 	@Inject
-	public SquareRequest(@Named("Square") DrawShape d){
+	public CircleRequest(@Named("Circle") DrawShape d){
 		this.d = d;
 		
 	} 
