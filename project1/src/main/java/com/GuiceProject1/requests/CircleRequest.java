@@ -12,7 +12,7 @@ public class CircleRequest {
 	DrawShape d;
 	
 	@Inject
-	public CircleRequest(@Named("Circle") DrawShape d){
+	public CircleRequest( @Circle DrawShape d){
 		this.d = d;
 		
 	} 

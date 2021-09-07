@@ -7,19 +7,19 @@ import com.GuiceProject1.annotations.ColorValue;
 
 public class DrawCircle implements DrawShape {
 	
-//	private String color;
-//	private Integer edge;
+	private String color;
+	private Integer radius;
 //	
 //	
 //	@Inject
-//	public DrawCircle(@ColorValue String color,@EdgeValue Integer edge) {
-//		super();
-//		this.color = color;
-//		this.edge = edge;
-//	}
+	public DrawCircle( String color, Integer radius) {
+		super();
+		this.color = color;
+		this.radius = radius;
+	}
 
 	@Override 
 	public void draw() {
-		System.out.println("drawing circle ");
+		System.out.println("drawing circle of color:  "+color+" and radius: "+ radius);
 	}
 }
