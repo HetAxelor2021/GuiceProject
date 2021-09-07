@@ -6,18 +6,23 @@ import com.GuiceProject1.services.DrawShape;
 //import com.google.inject.Inject;
 
 public class SquareRequest {
+	@Inject
 	DrawShape d;
 	
-	@Inject
-	public SquareRequest(DrawShape d){
-		this.d = d;
-		
-	}
+//	@Inject
+//	public SquareRequest(DrawShape d){
+//		this.d = d;
+//		
+//	} 
 	public void makeRequest() {
 		d.draw();
 	}
 	public DrawShape getDrawShape() {
 		return d;
 	}
+//	@Inject
+//	public void setDrawShape(DrawShape d) {
+//		this.d = d;
+//	}
 	
 }
