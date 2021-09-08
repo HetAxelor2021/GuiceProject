@@ -45,6 +45,6 @@ public class GuiceDemo {
 	public static void main(String[] args) {
 		System.out.println("hii");
 		sendRequest(SQUARE_REQ);
-		sendRequest(CIRCLE_REQ);
+//		sendRequest(CIRCLE_REQ);
 	}
 }
