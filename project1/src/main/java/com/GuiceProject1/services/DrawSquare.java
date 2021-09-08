@@ -6,6 +6,9 @@ import com.GuiceProject1.annotation.EdgeValue;
 import com.GuiceProject1.annotations.ColorValue;
 import com.GuiceProject1.requests.EdgeSize;
 import com.GuiceProject1.requests.SquareColorValue;
+import static com.GuiceProject1.constants.Constants.SQUARE;
+
+
 
 public class DrawSquare implements DrawShape {
 	
@@ -26,5 +29,10 @@ public class DrawSquare implements DrawShape {
 	public void draw() {
 		t.start();
 //		System.out.println("drawing square: color :"+color+" edge :  "+edge);
+	}
+	
+	@Override
+	public String getShapeName() {
+		return SQUARE;
 	}
 }
