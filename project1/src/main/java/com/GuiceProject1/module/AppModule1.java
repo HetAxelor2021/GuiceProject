@@ -24,29 +24,32 @@ import com.google.inject.Singleton;
 import com.google.inject.multibindings.Multibinder;
 import com.google.inject.name.Names;
 
-public class AppModule extends AbstractModule {
+public class AppModule1 extends AbstractModule {
 	
 	@Override
 	protected void configure() {
-		
-		Multibinder<DrawShape> drawShapeBinder = Multibinder.newSetBinder(binder(),DrawShape.class);
-		drawShapeBinder.addBinding().to(DrawSquare.class);
-		drawShapeBinder.addBinding().to(DrawCircle.class);
-		
-		
-		
-//		bind(DrawShape.class).annotatedWith(Square.class).toProvider(DrawSquareProvider.class).in(Scopes.SINGLETON);
-//		bind(DrawShape.class).annotatedWith(Circle.class).toProvider(DrawCircleProvider.class).in(Scopes.SINGLETON);
-		bind(String.class).annotatedWith(SquareColorValue.class).toInstance("red");
-		bind(Integer.class).annotatedWith(EdgeSize.class).toInstance(150);
-//		bind(String.class).annotatedWith(SquareColorValue.class).toInstance("Red");
+		//solution3
+		install(new AppModule2());
+		bind(DrawShape.class).annotatedWith(Square.class).to(DrawSquare.class);
+//		bind(DrawShape.class).annotatedWith(Circle.class).to(DrawCircle.class);
+//		Multibinder<DrawShape> drawShapeBinder = Multibinder.newSetBinder(binder(),DrawShape.class);
+//		drawShapeBinder.addBinding().to(DrawSquare.class);
+//		drawShapeBinder.addBinding().to(DrawCircle.class);
 //		
-//		bind(Integer.class).annotatedWith(SquareEdgeSize.class).toInstance(60);
-		bind(String.class).annotatedWith(CircleColorValue.class).toInstance("Black");
-		
-		bind(Integer.class).annotatedWith(Radius.class).toInstance(10);
-		
-//		bind(DrawShape.class).annotatedWith(Names.named("Square")).to(DrawSquare.class).in(Scopes.SINGLETON);
+//		
+//		
+////		bind(DrawShape.class).annotatedWith(Square.class).toProvider(DrawSquareProvider.class).in(Scopes.SINGLETON);
+////		bind(DrawShape.class).annotatedWith(Circle.class).toProvider(DrawCircleProvider.class).in(Scopes.SINGLETON);
+//		bind(String.class).annotatedWith(SquareColorValue.class).toInstance("red");
+//		bind(Integer.class).annotatedWith(EdgeSize.class).toInstance(150);
+////		bind(String.class).annotatedWith(SquareColorValue.class).toInstance("Red");
+////		
+////		bind(Integer.class).annotatedWith(SquareEdgeSize.class).toInstance(60);
+//		bind(String.class).annotatedWith(CircleColorValue.class).toInstance("Black");
+//		
+//		bind(Integer.class).annotatedWith(Radius.class).toInstance(10);
+//		
+////		bind(DrawShape.class).annotatedWith(Names.named("Square")).to(DrawSquare.class).in(Scopes.SINGLETON);
 //		bind(SquareRequest.class).to(SquareRequestSubClass.class);
 //		bind(String.class).annotatedWith(ColorValue.class).toInstance("Red");
 //		bind(Integer.class).annotatedWith(EdgeValue.class).toInstance(40);
